@@ -1,0 +1,35 @@
+<div ng-controller="editWorldCupCtrl">
+	<form ng-submit="edit()" name="editWorldCupForm" novalidate class="form-horizontal">
+		<div class="form-group">
+			<label for='name' class="col-sm-2 control-label">Championship name</label> 
+			<div class="col-sm-10">
+				<input type="text" class='form-control' ng-model="worldCup.name" id="name" required/>
+			</div>
+		</div>
+		<div class='form-group'>
+		 	<label for='year' class="col-sm-2 control-label">Year</label>
+		 	<div class="col-sm-10">
+				<input type="text" class='form-control' ng-model="worldCup.year" id="year" required/>
+			</div>
+		</div>
+		<div class='form-group'>
+		 	<label for='host' class="col-sm-2 control-label">Host country</label>
+			<div class="col-sm-10">
+				<select class='form-control' id='host' ng-model='selectedHost'>
+					<option>{{selectedHost}}</option>
+				</select>
+			</div>
+		</div>
+		<div class='form-group'>
+			<label for='winner' class="col-sm-2 control-label">Winner</label>
+			<div class="col-sm-10">
+				<select class='form-control' id='winner' ng-model='selectedWinner'>
+					<option>{{selectedWinner}}</option>
+				</select>
+			</div>
+		</div>
+		<div>
+			<button type="submit" ng-disabled="editWorldCupForm.$invalid" class="btn btn-primary">SAVE</button>
+		</div>
+	</form>
+</div>

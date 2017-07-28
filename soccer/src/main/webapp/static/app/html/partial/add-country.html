@@ -1,0 +1,11 @@
+<div ng-controller="addCountryCtrl">
+	<form ng-submit="add()" name="addCountryForm" class="form-horizontal">
+		<div class="form-group">
+			<label for='name' class="col-sm-2 control-label">Country name</label> 
+			<div class="col-sm-10">
+				<input type="text" id="name" class='form-control' ng-model="country.name" required placeholder='Brasil' />
+			</div>
+		</div>
+		<button type="submit" ng-disabled="addCountryForm.$invalid" class="btn btn-primary">SAVE</button>
+	</form>
+</div>

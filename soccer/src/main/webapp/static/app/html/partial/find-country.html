@@ -1,0 +1,36 @@
+<div ng-controller="findCountryCtrl">
+	<form ng-submit="find()" name="findCountryForm" novalidate class="form-horizontal">
+		<div class='form-group'>
+			<label for="country" class="col-sm-2 control-label">Country name</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" ng-model="countrySearch.name" id="country" placeholder="Brasil" required />
+			</div>
+		</div>
+		<div>
+			<button type="submit" class="btn btn-primary">Find!</button>
+		</div>
+	</form>
+	<br /> <br />
+	<div ng-hide='indicator'>
+		<hr>
+		<h3>List of matching countries:</h3>
+		<div class='btn-group pull-right' >
+			<button type="button" class='btn btn-primary' ng-click='back()' ng-disabled='page == 0'>PREVIOUS</button>
+			<button type="button" class='btn btn-primary' ng-click='forward()' ng-disabled='page == num_pages-1'>NEXT</button>
+		</div>
+		<table class="table table-hover">
+			<tr>
+				<th>Name</th>
+				<th>Actions</th>
+			</tr>
+			<tr ng-repeat="country in countries">
+				<td>{{country.name}}</td>
+				<td>
+					<button type = "button" class="btn btn-info" ng-click = "viewCountry(country.id)"><span class = 'glyphicon glyphicon-eye-open'></span> View</button>
+					<button type = "button" class="btn btn-warning" ng-click = "editCountry(country.id)"><span class = 'glyphicon glyphicon-edit'></span> Edit</button>
+					<button type = "button" class="btn btn-danger" ng-click = "deleteCountry(country.id)"><span class = 'glyphicon glyphicon-trash'></span> Delete</button>
+				</td>				
+			</tr>
+		</table>
+	</div>
+</div>
