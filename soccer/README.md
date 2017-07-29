@@ -1,4 +1,4 @@
-Pharmacy WebApp
+Soccer WebApp
 
 =============================================
 
@@ -28,4 +28,4 @@ AngularJS
 
 Link to application:
 
-http://www.svetozarzikic.com:9000
+http://www.svetozarzikic.com:9010
